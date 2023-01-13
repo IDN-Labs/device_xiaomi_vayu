@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2020 The LineageOS Project
+// Copyright (C) 2021 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,20 +14,8 @@
 // limitations under the License.
 
 cc_library_shared {
-    name: "libshim_megvii",
-
-    proprietary: true,
-    srcs: ["megvii_shim.cpp"],
-}
-
-cc_library_shared {
-    name: "libpiex_shim",
-
-    shared_libs: [
-        "libpiex",
-        "libutils",
-    ],
-
-    proprietary: true,
-    srcs: ["libpiex_shim.cpp"],
+	name: "android.hidl.base@1.0",
+	shared_libs: ["libhidlbase"],
+	system_ext_specific: true,
+	vendor_available: true
 }
